@@ -1,4 +1,4 @@
-import { SectionHeader } from "./SectionHeader";
+import { SectionHeader } from "../SectionHeader";
 
 const stats = [
   { n: "500+", label: "Events Crafted" },
