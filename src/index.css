@@ -1,105 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* AVORA + CrazyHedz dual-brand design system. All HSL. */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* AVORA luxury (default theme) */
+    --background: 0 0% 4%;
+    --foreground: 40 30% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 6%;
+    --card-foreground: 40 30% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 40 30% 92%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 42 65% 58%;            /* gold */
+    --primary-foreground: 0 0% 6%;
+    --primary-glow: 45 85% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 40 30% 92%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 40 10% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 42 65% 58%;
+    --accent-foreground: 0 0% 6%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 42 30% 20%;
+    --input: 42 30% 18%;
+    --ring: 42 65% 58%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* AVORA brand */
+    --avora-bg: 0 0% 4%;
+    --avora-gold: 42 65% 58%;
+    --avora-gold-light: 45 85% 75%;
+    --avora-cream: 40 30% 92%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* CrazyHedz brand */
+    --crazy-bg: 270 30% 6%;
+    --crazy-purple: 280 90% 65%;
+    --crazy-pink: 320 95% 65%;
+    --crazy-cyan: 180 95% 60%;
+    --crazy-text: 280 20% 95%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Gradients */
+    --gradient-avora: linear-gradient(135deg, hsl(42 65% 58%) 0%, hsl(45 85% 70%) 50%, hsl(38 70% 50%) 100%);
+    --gradient-avora-radial: radial-gradient(ellipse at center, hsl(42 65% 58% / 0.25), transparent 70%);
+    --gradient-crazy: linear-gradient(135deg, hsl(280 90% 65%) 0%, hsl(320 95% 65%) 50%, hsl(180 95% 60%) 100%);
+    --gradient-crazy-radial: radial-gradient(ellipse at center, hsl(280 90% 50% / 0.4), transparent 70%);
+    --gradient-dark-fade: linear-gradient(180deg, transparent 0%, hsl(0 0% 4% / 0.7) 60%, hsl(0 0% 4%) 100%);
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* Shadows */
+    --shadow-gold: 0 10px 40px -10px hsl(42 65% 58% / 0.4);
+    --shadow-gold-lg: 0 20px 60px -10px hsl(42 65% 58% / 0.5);
+    --shadow-neon: 0 10px 40px -10px hsl(280 90% 60% / 0.5);
+    --shadow-elegant: 0 30px 80px -20px hsl(0 0% 0% / 0.8);
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Transitions */
+    --transition-smooth: cubic-bezier(0.7, 0, 0.2, 1);
+    --transition-elegant: cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 40 30% 92%;
+    --sidebar-primary: 42 65% 58%;
+    --sidebar-primary-foreground: 0 0% 6%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 40 30% 92%;
+    --sidebar-border: 42 30% 20%;
+    --sidebar-ring: 42 65% 58%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  /* CrazyHedz theme overrides when applied to a section */
+  .theme-crazy {
+    --primary: 280 90% 65%;
+    --primary-foreground: 0 0% 100%;
+    --background: 270 30% 6%;
+    --foreground: 280 20% 95%;
+    --border: 280 40% 22%;
+    --input: 280 40% 18%;
+    --ring: 280 90% 65%;
+    --muted-foreground: 280 15% 70%;
+    --accent: 320 95% 65%;
+    --accent-foreground: 0 0% 100%;
+    --card: 270 30% 8%;
+    --card-foreground: 280 20% 95%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
+  * { @apply border-border; }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Syne', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
+  h1, h2, h3, h4, h5, .font-display { font-family: 'Playfair Display', serif; }
+  .font-mono-ui { font-family: 'Space Mono', monospace; }
+}
+
+@layer components {
+  .text-gold {
+    background: var(--gradient-avora);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-neon {
+    background: var(--gradient-crazy);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .eyebrow {
+    @apply font-mono-ui text-xs tracking-[0.3em] uppercase;
+  }
+  .gold-divider {
+    @apply mx-auto h-px w-16 bg-gradient-to-r from-transparent via-primary to-transparent;
+  }
+  .glass-nav {
+    @apply backdrop-blur-xl bg-background/60 border-b border-border/40;
+  }
+  .film-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-px after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { scrollbar-width: none; }
 }
