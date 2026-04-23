@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import avoraLogo from "@/assets/avora-logo.jpeg";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -27,15 +28,18 @@ export function Navbar({ brand, onPlanEvent, onTickets }: { brand: "avora" | "cr
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-40 transition-all duration-500",
-        scrolled ? "glass-nav py-3" : "py-5 bg-transparent",
+        scrolled ? "glass-nav py-2" : "py-3 bg-transparent",
       )}
     >
       <div className="container flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 group">
-          <span className="font-display text-2xl tracking-wider">
-            <span className="text-gold">AVORA</span>
-            <span className="text-muted-foreground mx-1.5">×</span>
-            <span className="text-neon">HEDZ</span>
+        <a href="#home" className="flex items-center gap-3 group">
+          <img
+            src={avoraLogo}
+            alt="Avora Experiences logo"
+            className="h-10 md:h-12 w-auto object-contain"
+          />
+          <span className="hidden sm:inline font-display text-xs tracking-[0.3em] text-muted-foreground">
+            × HEDZ
           </span>
         </a>
 

@@ -10,7 +10,6 @@ export async function submitToSheets(formType: string, data: FormPayload): Promi
   const payload = { formType, timestamp: new Date().toISOString(), ...data };
 
   if (!url) {
-    // Dev fallback: log so you can see submissions while configuring webhook.
     console.info("[forms] No VITE_SHEETS_WEBHOOK_URL set. Payload:", payload);
     await new Promise((r) => setTimeout(r, 600));
     return true;
@@ -19,7 +18,7 @@ export async function submitToSheets(formType: string, data: FormPayload): Promi
   try {
     await fetch(url, {
       method: "POST",
-      mode: "no-cors", // Apps Script web apps require this
+      mode: "no-cors",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(payload),
     });
@@ -30,7 +29,13 @@ export async function submitToSheets(formType: string, data: FormPayload): Promi
   }
 }
 
-export const WHATSAPP_NUMBER = "919999999999"; // TODO: replace with real number
+// Brand contact details
+export const WHATSAPP_NUMBER = "919892000000"; // TODO: replace with real number
+export const CONTACT_EMAIL = "hello@avoraexperiences.com";
+export const CONTACT_PHONE = "+91 98920 00000";
+export const INSTAGRAM_AVORA = "https://instagram.com/avora.experiences";
+export const INSTAGRAM_CRAZY = "https://instagram.com/crazyhedz";
+
 export function whatsappLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
