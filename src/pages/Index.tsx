@@ -65,10 +65,10 @@ const Index = () => {
               Plan My Event
             </button>
             <a
-              href="mailto:hello@avora.in"
+              href="mailto:hello@avoraexperiences.com"
               className="px-8 py-4 rounded-md border border-primary/60 text-primary uppercase tracking-[0.2em] text-xs hover:bg-primary hover:text-primary-foreground transition-all flex items-center justify-center"
             >
-              hello@avora.in
+              hello@avoraexperiences.com
             </a>
           </div>
         </div>

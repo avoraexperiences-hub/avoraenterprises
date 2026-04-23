@@ -72,7 +72,7 @@ export function Events({ onBook }: { onBook: (e: EventItem) => void }) {
                 {e.status === "past" ? (
                   <span className="eyebrow text-muted-foreground">Sold Out</span>
                 ) : (
-                  <Button variant="neon" onClick={() => onBook(e)}>Register Now</Button>
+                  <Button variant="neon" onClick={() => onBook(e)}>Register Interest</Button>
                 )}
               </div>
             </div>
