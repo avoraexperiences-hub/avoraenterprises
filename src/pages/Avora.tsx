@@ -41,7 +41,7 @@ const Avora = () => {
       {/* Contact section */}
       <section id="contact" className="relative py-24 md:py-32 bg-secondary/30 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-avora-radial opacity-20 pointer-events-none" />
-        <div className="container relative max-w-3xl text-center">
+        <div className="container relative max-w-5xl text-center">
           <p className="eyebrow text-primary mb-4 tracking-[0.4em]">Get in Touch</p>
           <h2 className="font-display text-4xl md:text-6xl text-gold mb-4">Plan Your Experience</h2>
           <div className="gold-divider mb-6" />
