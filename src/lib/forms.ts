@@ -1,38 +1,46 @@
-// Google Sheets / Apps Script webhook integration.
-// Set VITE_SHEETS_WEBHOOK_URL in your .env after deploying the Apps Script.
-// Setup guide: https://developers.google.com/apps-script/guides/web
+import { supabase } from "@/integrations/supabase/client";
 
 export type FormPayload = Record<string, string | number | undefined>;
 
-export async function submitToSheets(formType: string, data: FormPayload): Promise<boolean> {
-  const url = import.meta.env.VITE_SHEETS_WEBHOOK_URL as string | undefined;
+/**
+ * Submit a form to Lovable Cloud (Supabase).
+ * Stores into the `form_submissions` table. View leads in Cloud → Database → form_submissions.
+ */
+export async function submitToSheets(
+  formType: "avora_inquiry" | "crazy_ambassador" | "crazy_partner_college" | "crazy_ticket_inquiry",
+  data: FormPayload
+): Promise<boolean> {
+  const name = String(data.name ?? "").trim();
+  const phone = String(data.phone ?? "").trim();
+  const email = data.email ? String(data.email).trim() : null;
 
-  const payload = { formType, timestamp: new Date().toISOString(), ...data };
-
-  if (!url) {
-    console.info("[forms] No VITE_SHEETS_WEBHOOK_URL set. Payload:", payload);
-    await new Promise((r) => setTimeout(r, 600));
-    return true;
-  }
-
-  try {
-    await fetch(url, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify(payload),
-    });
-    return true;
-  } catch (e) {
-    console.error("[forms] Submit failed:", e);
+  if (!name || !phone) {
+    console.error("[forms] Missing required fields name/phone");
     return false;
   }
+
+  // Strip name/phone/email from payload to avoid duplication
+  const { name: _n, phone: _p, email: _e, ...rest } = data;
+
+  const { error } = await supabase.from("form_submissions").insert({
+    form_type: formType,
+    name,
+    phone,
+    email,
+    payload: rest as Record<string, unknown>,
+  });
+
+  if (error) {
+    console.error("[forms] Submit failed:", error);
+    return false;
+  }
+  return true;
 }
 
 // Brand contact details
-export const WHATSAPP_NUMBER = "919892000000"; // TODO: replace with real number
-export const CONTACT_EMAIL = "hello@avoraexperiences.com";
-export const CONTACT_PHONE = "+91 98920 00000";
+export const WHATSAPP_NUMBER = "918419979918";
+export const CONTACT_EMAIL = "avoraexperiences@gmail.com";
+export const CONTACT_PHONE = "+91 84199 79918";
 export const INSTAGRAM_AVORA = "https://instagram.com/avora.experiences";
 export const INSTAGRAM_CRAZY = "https://instagram.com/crazyhedz";
 

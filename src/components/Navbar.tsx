@@ -1,19 +1,39 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import avoraLogo from "@/assets/avora-logo.jpeg";
+import avoraLogo from "@/assets/avora-logo.png";
 
-const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Events", href: "#events" },
-  { label: "Packages", href: "#packages" },
-  { label: "Contact", href: "#contact" },
-];
+type Brand = "avora" | "crazy";
 
-export function Navbar({ brand, onPlanEvent, onTickets }: { brand: "avora" | "crazy"; onPlanEvent: () => void; onTickets: () => void }) {
+const linksByBrand: Record<Brand, { label: string; href: string }[]> = {
+  avora: [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Packages", href: "#packages" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Contact", href: "#contact" },
+  ],
+  crazy: [
+    { label: "Home", href: "#home" },
+    { label: "Events", href: "#events" },
+    { label: "Ambassador", href: "#ambassador" },
+    { label: "Partner", href: "#partner" },
+    { label: "Contact", href: "#contact" },
+  ],
+};
+
+export function Navbar({
+  brand,
+  onPrimaryCta,
+  primaryLabel,
+}: {
+  brand: Brand;
+  onPrimaryCta: () => void;
+  primaryLabel: string;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -24,44 +44,63 @@ export function Navbar({ brand, onPlanEvent, onTickets }: { brand: "avora" | "cr
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const links = linksByBrand[brand];
+  const otherBrand: Brand = brand === "avora" ? "crazy" : "avora";
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-40 transition-all duration-500",
-        scrolled ? "glass-nav py-2" : "py-3 bg-transparent",
+        scrolled ? "glass-nav py-3 md:py-4" : "py-4 md:py-6 bg-transparent",
       )}
     >
-      <div className="container flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3 group">
-          <img
-            src={avoraLogo}
-            alt="Avora Experiences logo"
-            className="h-10 md:h-12 w-auto object-contain"
-          />
-          <span className="hidden sm:inline font-display text-xs tracking-[0.3em] text-muted-foreground">
-            × HEDZ
-          </span>
-        </a>
+      <div className="container flex items-center justify-between gap-4">
+        <Link to="/" className="flex items-center gap-3 group shrink-0">
+          {brand === "avora" ? (
+            <img
+              src={avoraLogo}
+              alt="Avora"
+              className="h-12 md:h-16 lg:h-20 w-auto object-contain transition-transform group-hover:scale-105"
+            />
+          ) : (
+            <span className="font-display text-2xl md:text-3xl lg:text-4xl text-neon tracking-wide">
+              CRAZY <span className="text-crazy-text/80 font-light text-xl md:text-2xl">HEADS</span>
+            </span>
+          )}
+        </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm tracking-wide text-foreground/80 hover:text-foreground story-link">
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-sm tracking-[0.15em] uppercase text-foreground/75 hover:text-foreground story-link"
+            >
               {l.label}
             </a>
           ))}
+          <Link
+            to={`/${otherBrand}`}
+            className={cn(
+              "text-sm tracking-[0.15em] uppercase",
+              brand === "avora" ? "text-crazy-purple hover:opacity-80" : "text-primary hover:opacity-80"
+            )}
+          >
+            {brand === "avora" ? "Crazy Heads ↗" : "← Avora"}
+          </Link>
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
           {brand === "avora" ? (
-            <Button variant="gold-outline" onClick={onPlanEvent}>Plan Event</Button>
+            <Button variant="gold" size="lg" onClick={onPrimaryCta}>{primaryLabel}</Button>
           ) : (
-            <Button variant="neon-outline" onClick={onTickets}>Tickets</Button>
+            <Button variant="neon" size="lg" onClick={onPrimaryCta}>{primaryLabel}</Button>
           )}
         </div>
 
         <button
           aria-label="Menu"
-          className="lg:hidden h-10 w-10 inline-flex items-center justify-center rounded-md border border-border/60"
+          className="lg:hidden h-11 w-11 inline-flex items-center justify-center rounded-md border border-border/60"
           onClick={() => setOpen((o) => !o)}
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -76,15 +115,26 @@ export function Navbar({ brand, onPlanEvent, onTickets }: { brand: "avora" | "cr
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-base tracking-wide py-2 border-b border-border/30"
+                className="text-base tracking-[0.15em] uppercase py-2 border-b border-border/30"
               >
                 {l.label}
               </a>
             ))}
-            <div className="flex gap-3 pt-2">
-              <Button variant="gold" className="flex-1" onClick={() => { onPlanEvent(); setOpen(false); }}>Plan Event</Button>
-              <Button variant="neon" className="flex-1" onClick={() => { onTickets(); setOpen(false); }}>Tickets</Button>
-            </div>
+            <Link
+              to={`/${otherBrand}`}
+              onClick={() => setOpen(false)}
+              className={cn(
+                "text-base tracking-[0.15em] uppercase py-2 border-b border-border/30",
+                brand === "avora" ? "text-crazy-purple" : "text-primary"
+              )}
+            >
+              {brand === "avora" ? "Crazy Heads ↗" : "← Avora"}
+            </Link>
+            {brand === "avora" ? (
+              <Button variant="gold" size="lg" onClick={() => { onPrimaryCta(); setOpen(false); }}>{primaryLabel}</Button>
+            ) : (
+              <Button variant="neon" size="lg" onClick={() => { onPrimaryCta(); setOpen(false); }}>{primaryLabel}</Button>
+            )}
           </div>
         </div>
       )}
