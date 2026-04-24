@@ -49,21 +49,21 @@ const Avora = () => {
             Tell us about your vision and let's create something extraordinary together.
           </p>
 
-          <div className="grid sm:grid-cols-3 gap-6 mb-10 text-sm">
-            <a href={`mailto:${CONTACT_EMAIL}`} className="group flex flex-col items-center gap-2 p-6 rounded-xl border border-border/60 hover:border-primary/60 transition-all">
-              <Mail className="size-5 text-primary group-hover:scale-110 transition" />
-              <span className="text-muted-foreground text-xs uppercase tracking-[0.2em]">Email</span>
-              <span className="text-foreground break-all">{CONTACT_EMAIL}</span>
+          <div className="grid sm:grid-cols-3 gap-5 md:gap-6 mb-10">
+            <a href={`mailto:${CONTACT_EMAIL}`} className="group flex flex-col items-center gap-3 p-7 md:p-8 rounded-2xl border border-border/60 bg-background/50 hover:border-primary/60 hover:bg-background/80 transition-all min-w-0">
+              <Mail className="size-6 text-primary group-hover:scale-110 transition" />
+              <span className="text-primary text-[11px] uppercase tracking-[0.3em] font-semibold">Email</span>
+              <span className="text-foreground text-sm md:text-base font-medium whitespace-nowrap overflow-hidden text-ellipsis max-w-full" title={CONTACT_EMAIL}>{CONTACT_EMAIL}</span>
             </a>
-            <a href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`} className="group flex flex-col items-center gap-2 p-6 rounded-xl border border-border/60 hover:border-primary/60 transition-all">
-              <Phone className="size-5 text-primary group-hover:scale-110 transition" />
-              <span className="text-muted-foreground text-xs uppercase tracking-[0.2em]">Call</span>
-              <span className="text-foreground">{CONTACT_PHONE}</span>
+            <a href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`} className="group flex flex-col items-center gap-3 p-7 md:p-8 rounded-2xl border border-border/60 bg-background/50 hover:border-primary/60 hover:bg-background/80 transition-all min-w-0">
+              <Phone className="size-6 text-primary group-hover:scale-110 transition" />
+              <span className="text-primary text-[11px] uppercase tracking-[0.3em] font-semibold">Call</span>
+              <span className="text-foreground text-sm md:text-base font-medium whitespace-nowrap">{CONTACT_PHONE}</span>
             </a>
-            <a href={whatsappLink("Hi Avora! I'd like to plan an event.")} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-2 p-6 rounded-xl border border-border/60 hover:border-primary/60 transition-all">
-              <MapPin className="size-5 text-primary group-hover:scale-110 transition" />
-              <span className="text-muted-foreground text-xs uppercase tracking-[0.2em]">WhatsApp</span>
-              <span className="text-foreground">{CONTACT_PHONE}</span>
+            <a href={whatsappLink("Hi Avora! I'd like to plan an event.")} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-3 p-7 md:p-8 rounded-2xl border border-border/60 bg-background/50 hover:border-primary/60 hover:bg-background/80 transition-all min-w-0">
+              <MapPin className="size-6 text-primary group-hover:scale-110 transition" />
+              <span className="text-primary text-[11px] uppercase tracking-[0.3em] font-semibold">WhatsApp</span>
+              <span className="text-foreground text-sm md:text-base font-medium whitespace-nowrap">{CONTACT_PHONE}</span>
             </a>
           </div>
 
