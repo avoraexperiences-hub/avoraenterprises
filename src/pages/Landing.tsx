@@ -53,7 +53,7 @@ const Landing = () => {
               alt="Avora"
               className={cn(
                 "transition-all duration-700 mb-6",
-                avoraExpanded ? "h-24 md:h-32 opacity-100 mix-blend-screen" : "h-16 md:h-20 opacity-90 mix-blend-screen",
+                avoraExpanded ? "h-24 md:h-32 opacity-100" : "h-16 md:h-20 opacity-90",
               )}
             />
             <span className="eyebrow text-primary mb-4 tracking-[0.5em]">Luxury Event Experiences</span>
@@ -138,7 +138,7 @@ const Landing = () => {
           <div className="absolute inset-0 bg-avora-bg/65" />
           <div className="absolute inset-0 bg-gradient-avora-radial opacity-40" />
           <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-            <img src={avoraLogo} alt="Avora" className="h-12 mb-3 opacity-90 mix-blend-screen" />
+            <img src={avoraLogo} alt="Avora" className="h-12 mb-3 opacity-90" />
             <span className="eyebrow text-primary mb-2"><Sparkles className="inline size-3 mr-1" /> Luxury</span>
             <h1 className="font-display text-5xl text-gold mb-1">AVORA</h1>
             <p className="font-display tracking-[0.4em] text-avora-cream/70 text-[10px] mb-5">EXPERIENCES</p>

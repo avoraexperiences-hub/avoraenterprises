@@ -60,7 +60,7 @@ export function Navbar({
             <img
               src={avoraLogo}
               alt="Avora"
-              className="h-12 md:h-16 lg:h-20 w-auto object-contain mix-blend-screen transition-transform group-hover:scale-105"
+              className="h-12 md:h-16 lg:h-20 w-auto object-contain transition-transform group-hover:scale-105"
             />
           ) : (
             <span className="font-display text-2xl md:text-3xl lg:text-4xl text-neon tracking-wide">
