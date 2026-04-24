@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
-import { SplitHero } from "@/components/SplitHero";
 import { BrandSwitcher } from "@/components/BrandSwitcher";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
@@ -14,7 +14,11 @@ import { PlanEventModal, AmbassadorModal, PartnerModal } from "@/components/moda
 import { TicketBookingModal } from "@/components/modals/TicketBookingModal";
 
 const Index = () => {
-  const [brand, setBrand] = useState<"avora" | "crazy" | null>(null);
+  const location = useLocation() as { state?: { brand?: "avora" | "crazy" } };
+  const initialBrand =
+    location.state?.brand ??
+    ((typeof window !== "undefined" && (sessionStorage.getItem("brand") as "avora" | "crazy" | null)) || "avora");
+  const [brand, setBrand] = useState<"avora" | "crazy" | null>(initialBrand);
   const [planOpen, setPlanOpen] = useState(false);
   const [ambOpen, setAmbOpen] = useState(false);
   const [partnerOpen, setPartnerOpen] = useState(false);
@@ -31,13 +35,7 @@ const Index = () => {
       />
       <BrandSwitcher brand={brand} setBrand={setBrand} />
 
-      <SplitHero
-        brand={brand}
-        setBrand={setBrand}
-        onPlanEvent={() => setPlanOpen(true)}
-        onTickets={goToEvents}
-      />
-
+      <div id="home" />
       <About />
       <Services />
       <Packages onCta={() => setPlanOpen(true)} />
