@@ -22,13 +22,13 @@ export async function submitToSheets(
   // Strip name/phone/email from payload to avoid duplication
   const { name: _n, phone: _p, email: _e, ...rest } = data;
 
-  const { error } = await supabase.from("form_submissions").insert({
+  const { error } = await supabase.from("form_submissions").insert([{
     form_type: formType,
     name,
     phone,
-    email,
-    payload: rest as Record<string, unknown>,
-  });
+    email: email ?? undefined,
+    payload: rest as never,
+  }]);
 
   if (error) {
     console.error("[forms] Submit failed:", error);
