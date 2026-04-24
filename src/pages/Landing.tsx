@@ -115,7 +115,7 @@ const Landing = () => {
             {crazyExpanded ? (
               <button
                 onClick={(e) => { e.stopPropagation(); enter("crazy"); }}
-                className="group inline-flex items-center gap-3 px-10 py-4 rounded-full border border-crazy-purple/60 bg-crazy-purple/10 backdrop-blur-sm text-crazy-purple text-xs tracking-[0.4em] uppercase hover:bg-gradient-crazy hover:text-white hover:border-transparent transition-all animate-fade-in"
+                className="group inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-crazy text-white font-semibold text-xs tracking-[0.4em] uppercase shadow-[0_0_30px_hsl(var(--crazy-purple)/0.6)] hover:shadow-[0_0_50px_hsl(var(--crazy-purple)/0.9)] hover:scale-105 transition-all animate-fade-in"
               >
                 Enter Crazy Hedz <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
               </button>
