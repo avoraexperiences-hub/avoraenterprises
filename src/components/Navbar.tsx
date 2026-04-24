@@ -32,7 +32,7 @@ export function Navbar({ brand, onPlanEvent, onTickets }: { brand: "avora" | "cr
       )}
     >
       <div className="container flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-3 group">
+        <a href="/" className="flex items-center gap-3 group">
           <img
             src={avoraLogo}
             alt="Avora Experiences logo"
