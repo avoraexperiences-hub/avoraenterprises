@@ -25,7 +25,7 @@ export function About() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mt-20">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="font-display text-5xl md:text-6xl text-gold mb-2">{s.n}</div>
+              <CountUp end={s.end} suffix={s.suffix} className="font-display text-5xl md:text-6xl text-gold mb-2 block" />
               <div className="eyebrow text-muted-foreground">{s.label}</div>
             </div>
           ))}
