@@ -1,10 +1,11 @@
 import { SectionHeader } from "../SectionHeader";
+import { CountUp } from "../CountUp";
 
 const stats = [
-  { n: "500+", label: "Events Crafted" },
-  { n: "350+", label: "Happy Clients" },
-  { n: "25+", label: "Cities Served" },
-  { n: "8+", label: "Years of Excellence" },
+  { end: 500, suffix: "+", label: "Events Crafted" },
+  { end: 350, suffix: "+", label: "Happy Clients" },
+  { end: 25, suffix: "+", label: "Cities Served" },
+  { end: 8, suffix: "+", label: "Years of Excellence" },
 ];
 
 export function About() {
