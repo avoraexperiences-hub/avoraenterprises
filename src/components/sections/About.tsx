@@ -1,10 +1,11 @@
 import { SectionHeader } from "../SectionHeader";
+import { CountUp } from "../CountUp";
 
 const stats = [
-  { n: "500+", label: "Events Crafted" },
-  { n: "350+", label: "Happy Clients" },
-  { n: "25+", label: "Cities Served" },
-  { n: "8+", label: "Years of Excellence" },
+  { end: 500, suffix: "+", label: "Events Crafted" },
+  { end: 350, suffix: "+", label: "Happy Clients" },
+  { end: 25, suffix: "+", label: "Cities Served" },
+  { end: 8, suffix: "+", label: "Years of Excellence" },
 ];
 
 export function About() {
@@ -24,7 +25,7 @@ export function About() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mt-20">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="font-display text-5xl md:text-6xl text-gold mb-2">{s.n}</div>
+              <CountUp end={s.end} suffix={s.suffix} className="font-display text-5xl md:text-6xl text-gold mb-2 block" />
               <div className="eyebrow text-muted-foreground">{s.label}</div>
             </div>
           ))}
