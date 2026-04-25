@@ -108,7 +108,7 @@ export function AmbassadorModal({ open, onOpenChange }: { open: boolean; onOpenC
         <DialogHeader>
           <p className="eyebrow text-crazy-purple">Join the Crew</p>
           <DialogTitle className="font-display text-3xl text-neon">Campus Ambassador</DialogTitle>
-          <DialogDescription>Represent CrazyHedz at your college. Earn rewards, perks & exclusive access.</DialogDescription>
+          <DialogDescription>Represent Crazy Hedz at your college. Earn rewards, perks & exclusive access.</DialogDescription>
         </DialogHeader>
 
         {code ? (
@@ -178,7 +178,7 @@ export function PartnerModal({ open, onOpenChange }: { open: boolean; onOpenChan
         <DialogHeader>
           <p className="eyebrow text-crazy-purple">Collaborate</p>
           <DialogTitle className="font-display text-3xl text-neon">Partner Your College</DialogTitle>
-          <DialogDescription>Bring CrazyHedz events to your campus.</DialogDescription>
+          <DialogDescription>Bring Crazy Hedz events to your campus.</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-3">
