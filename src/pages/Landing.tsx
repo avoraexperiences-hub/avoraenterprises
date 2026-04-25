@@ -53,7 +53,7 @@ const Landing = () => {
               src={avoraLogo}
               alt="Avora Experiences"
               className={cn(
-                "transition-all duration-700 w-auto object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]",
+                "transition-all duration-700 w-auto object-contain logo-blend",
                 avoraExpanded ? "h-40 sm:h-56 md:h-72 lg:h-80" : "h-28 sm:h-40 md:h-52 lg:h-64",
               )}
             />
@@ -99,7 +99,7 @@ const Landing = () => {
               src={crazyLogo}
               alt="Crazy Hedz"
               className={cn(
-                "transition-all duration-700 w-auto object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]",
+                "transition-all duration-700 w-auto object-contain logo-blend",
                 crazyExpanded ? "h-40 sm:h-56 md:h-72 lg:h-80" : "h-28 sm:h-40 md:h-52 lg:h-64",
               )}
             />

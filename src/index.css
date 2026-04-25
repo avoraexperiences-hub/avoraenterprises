@@ -142,6 +142,11 @@
   .story-link {
     @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-px after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
+  /* Submerge brand logos into the dark background — drops the black canvas, keeps only the artwork */
+  .logo-blend {
+    mix-blend-mode: lighten;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5)) contrast(1.05) saturate(1.1);
+  }
 }
 
 @layer utilities {

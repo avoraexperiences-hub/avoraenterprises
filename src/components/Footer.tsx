@@ -19,9 +19,9 @@ export function Footer({ brand = "avora" }: { brand?: "avora" | "crazy" }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
           <div>
             {isAvora ? (
-              <img src={avoraLogo} alt="Avora Experiences" className="h-20 w-auto object-contain mb-4" />
+              <img src={avoraLogo} alt="Avora Experiences" className="h-20 w-auto object-contain mb-4 logo-blend" />
             ) : (
-              <img src={crazyLogo} alt="Crazy Hedz" className="h-20 w-auto object-contain mb-4" />
+              <img src={crazyLogo} alt="Crazy Hedz" className="h-20 w-auto object-contain mb-4 logo-blend" />
             )}
             <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
               {isAvora
@@ -82,10 +82,10 @@ export function Footer({ brand = "avora" }: { brand?: "avora" | "crazy" }) {
           <div>
             <h4 className="eyebrow text-primary mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-foreground break-all font-display">{CONTACT_EMAIL}</a></li>
-              <li><a href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`} className="hover:text-foreground font-display tracking-wide tabular-nums">{CONTACT_PHONE}</a></li>
+              <li><a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-foreground break-all">{CONTACT_EMAIL}</a></li>
+              <li><a href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`} className="hover:text-foreground tabular-nums">{CONTACT_PHONE}</a></li>
               {!isAvora && (
-                <li><a href={`tel:${CONTACT_PHONE_ANSH.replace(/\s/g, "")}`} className="hover:text-foreground font-display tracking-wide tabular-nums">{CONTACT_PHONE_ANSH} <span className="text-xs text-muted-foreground/70">(Ansh)</span></a></li>
+                <li><a href={`tel:${CONTACT_PHONE_ANSH.replace(/\s/g, "")}`} className="hover:text-foreground tabular-nums">{CONTACT_PHONE_ANSH} <span className="text-xs text-muted-foreground/70">(Ansh)</span></a></li>
               )}
               <li className="flex items-center gap-1.5"><MapPin className="size-3" /> Mumbai, India</li>
             </ul>
