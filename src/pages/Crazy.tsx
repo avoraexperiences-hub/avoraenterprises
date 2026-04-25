@@ -96,22 +96,22 @@ const Crazy = () => {
             <a href={`mailto:${CONTACT_EMAIL}`} className="group flex flex-col items-center gap-3 p-6 md:p-7 rounded-2xl border border-border/60 bg-background/50 hover:border-crazy-purple/60 hover:bg-background/80 transition-all min-w-0">
               <Mail className="size-6 text-crazy-purple group-hover:scale-110 transition" />
               <span className="text-crazy-purple text-[11px] uppercase tracking-[0.3em] font-semibold">Email</span>
-              <span className="text-foreground text-sm md:text-base font-medium font-display whitespace-nowrap overflow-hidden text-ellipsis max-w-full" title={CONTACT_EMAIL}>{CONTACT_EMAIL}</span>
+              <span className="text-foreground text-sm md:text-base font-medium whitespace-nowrap overflow-hidden text-ellipsis max-w-full" title={CONTACT_EMAIL}>{CONTACT_EMAIL}</span>
             </a>
             <a href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`} className="group flex flex-col items-center gap-3 p-6 md:p-7 rounded-2xl border border-border/60 bg-background/50 hover:border-crazy-purple/60 hover:bg-background/80 transition-all min-w-0">
               <Phone className="size-6 text-crazy-purple group-hover:scale-110 transition" />
               <span className="text-crazy-purple text-[11px] uppercase tracking-[0.3em] font-semibold">Call</span>
-              <span className="text-foreground text-base md:text-lg font-display tracking-wide tabular-nums whitespace-nowrap">{CONTACT_PHONE}</span>
+              <span className="text-foreground text-sm md:text-base font-medium tabular-nums whitespace-nowrap">{CONTACT_PHONE}</span>
             </a>
             <a href={`tel:${CONTACT_PHONE_ANSH.replace(/\s/g, "")}`} className="group flex flex-col items-center gap-3 p-6 md:p-7 rounded-2xl border border-border/60 bg-background/50 hover:border-crazy-purple/60 hover:bg-background/80 transition-all min-w-0">
               <Phone className="size-6 text-crazy-purple group-hover:scale-110 transition" />
               <span className="text-crazy-purple text-[11px] uppercase tracking-[0.3em] font-semibold">Call · Ansh</span>
-              <span className="text-foreground text-base md:text-lg font-display tracking-wide tabular-nums whitespace-nowrap">{CONTACT_PHONE_ANSH}</span>
+              <span className="text-foreground text-sm md:text-base font-medium tabular-nums whitespace-nowrap">{CONTACT_PHONE_ANSH}</span>
             </a>
             <a href={INSTAGRAM_CRAZY} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-3 p-6 md:p-7 rounded-2xl border border-border/60 bg-background/50 hover:border-crazy-purple/60 hover:bg-background/80 transition-all min-w-0">
               <Instagram className="size-6 text-crazy-purple group-hover:scale-110 transition" />
               <span className="text-crazy-purple text-[11px] uppercase tracking-[0.3em] font-semibold">Instagram</span>
-              <span className="text-foreground text-sm md:text-base font-medium font-display whitespace-nowrap">{INSTAGRAM_CRAZY_HANDLE}</span>
+              <span className="text-foreground text-sm md:text-base font-medium whitespace-nowrap">{INSTAGRAM_CRAZY_HANDLE}</span>
             </a>
           </div>
         </div>
