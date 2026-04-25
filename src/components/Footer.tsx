@@ -19,9 +19,9 @@ export function Footer({ brand = "avora" }: { brand?: "avora" | "crazy" }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
           <div>
             {isAvora ? (
-              <img src={avoraLogo} alt="Avora Experiences" className="h-20 w-auto object-contain mb-4" />
+              <img src={avoraLogo} alt="Avora Experiences" className="h-20 w-auto object-contain mb-4 logo-blend" />
             ) : (
-              <img src={crazyLogo} alt="Crazy Hedz" className="h-20 w-auto object-contain mb-4" />
+              <img src={crazyLogo} alt="Crazy Hedz" className="h-20 w-auto object-contain mb-4 logo-blend" />
             )}
             <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
               {isAvora

@@ -24,7 +24,7 @@ export function AvoraHero({ onPlanEvent, onExplore }: { onPlanEvent: () => void;
         <img
           src={avoraLogo}
           alt="Avora Experiences"
-          className="mx-auto h-28 md:h-40 lg:h-48 w-auto object-contain mb-6 opacity-95 drop-shadow-2xl"
+          className="mx-auto h-28 md:h-40 lg:h-48 w-auto object-contain mb-6 logo-blend"
         />
         <p className="eyebrow text-primary mb-6 tracking-[0.5em]">
           <Sparkles className="inline size-3 mr-2" />

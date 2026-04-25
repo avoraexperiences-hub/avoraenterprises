@@ -23,7 +23,7 @@ export function CrazyHero({ onTickets, onAmbassador }: { onTickets: () => void; 
         <img
           src={crazyLogo}
           alt="Crazy Hedz"
-          className="mx-auto h-40 sm:h-56 md:h-72 lg:h-80 w-auto object-contain mb-6 drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
+          className="mx-auto h-40 sm:h-56 md:h-72 lg:h-80 w-auto object-contain mb-6 logo-blend"
         />
         <div className="mx-auto h-px w-16 bg-gradient-to-r from-transparent via-crazy-purple to-transparent mb-8" />
         <p className="max-w-2xl mx-auto text-crazy-text/85 text-base md:text-lg leading-relaxed mb-10">
