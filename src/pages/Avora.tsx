@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, Instagram } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { AvoraHero } from "@/components/sections/AvoraHero";
 import { About } from "@/components/sections/About";
@@ -9,7 +9,7 @@ import { Portfolio } from "@/components/sections/Portfolio";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { PlanEventModal } from "@/components/modals/FormModals";
-import { CONTACT_EMAIL, CONTACT_PHONE, whatsappLink } from "@/lib/forms";
+import { CONTACT_EMAIL, CONTACT_PHONE, INSTAGRAM_AVORA, INSTAGRAM_AVORA_HANDLE, PRE_WEDDING_VENUES } from "@/lib/forms";
 import { Button } from "@/components/ui/button";
 
 const Avora = () => {
@@ -38,6 +38,31 @@ const Avora = () => {
         <Portfolio />
       </div>
 
+      {/* Pre-Wedding Venues */}
+      <section id="venues" className="relative py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-avora-radial opacity-15 pointer-events-none" />
+        <div className="container relative max-w-5xl text-center">
+          <p className="eyebrow text-primary mb-4 tracking-[0.4em]">Destinations</p>
+          <h2 className="font-display text-4xl md:text-6xl text-gold mb-4">Pre-Wedding Venues</h2>
+          <div className="gold-divider mb-6" />
+          <p className="text-muted-foreground text-base md:text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
+            Iconic destinations across India — from royal palaces to coastal hideaways, curated for your story.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+            {PRE_WEDDING_VENUES.map((v) => (
+              <div
+                key={v}
+                className="group p-5 md:p-6 rounded-xl border border-border/60 bg-background/40 hover:border-primary/60 hover:bg-background/70 transition-all"
+              >
+                <span className="block font-display text-base md:text-lg text-foreground group-hover:text-primary transition-colors">
+                  {v}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact section */}
       <section id="contact" className="relative py-24 md:py-32 bg-secondary/30 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-avora-radial opacity-20 pointer-events-none" />
@@ -53,17 +78,17 @@ const Avora = () => {
             <a href={`mailto:${CONTACT_EMAIL}`} className="group flex flex-col items-center gap-3 p-7 md:p-8 rounded-2xl border border-border/60 bg-background/50 hover:border-primary/60 hover:bg-background/80 transition-all min-w-0">
               <Mail className="size-6 text-primary group-hover:scale-110 transition" />
               <span className="text-primary text-[11px] uppercase tracking-[0.3em] font-semibold">Email</span>
-              <span className="text-foreground text-sm md:text-base font-medium whitespace-nowrap overflow-hidden text-ellipsis max-w-full" title={CONTACT_EMAIL}>{CONTACT_EMAIL}</span>
+              <span className="text-foreground text-sm md:text-base font-medium font-display whitespace-nowrap overflow-hidden text-ellipsis max-w-full" title={CONTACT_EMAIL}>{CONTACT_EMAIL}</span>
             </a>
             <a href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`} className="group flex flex-col items-center gap-3 p-7 md:p-8 rounded-2xl border border-border/60 bg-background/50 hover:border-primary/60 hover:bg-background/80 transition-all min-w-0">
               <Phone className="size-6 text-primary group-hover:scale-110 transition" />
               <span className="text-primary text-[11px] uppercase tracking-[0.3em] font-semibold">Call</span>
-              <span className="text-foreground text-sm md:text-base font-medium whitespace-nowrap">{CONTACT_PHONE}</span>
+              <span className="text-foreground text-base md:text-lg font-display tracking-wide tabular-nums whitespace-nowrap">{CONTACT_PHONE}</span>
             </a>
-            <a href={whatsappLink("Hi Avora! I'd like to plan an event.")} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-3 p-7 md:p-8 rounded-2xl border border-border/60 bg-background/50 hover:border-primary/60 hover:bg-background/80 transition-all min-w-0">
-              <MapPin className="size-6 text-primary group-hover:scale-110 transition" />
-              <span className="text-primary text-[11px] uppercase tracking-[0.3em] font-semibold">WhatsApp</span>
-              <span className="text-foreground text-sm md:text-base font-medium whitespace-nowrap">{CONTACT_PHONE}</span>
+            <a href={INSTAGRAM_AVORA} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-3 p-7 md:p-8 rounded-2xl border border-border/60 bg-background/50 hover:border-primary/60 hover:bg-background/80 transition-all min-w-0">
+              <Instagram className="size-6 text-primary group-hover:scale-110 transition" />
+              <span className="text-primary text-[11px] uppercase tracking-[0.3em] font-semibold">Instagram</span>
+              <span className="text-foreground text-sm md:text-base font-medium font-display whitespace-nowrap">{INSTAGRAM_AVORA_HANDLE}</span>
             </a>
           </div>
 

@@ -4,7 +4,7 @@ import { whatsappLink } from "@/lib/forms";
 export function WhatsAppButton() {
   return (
     <a
-      href={whatsappLink("Hi! I'd like to know more about Avora × CrazyHedz events.")}
+      href={whatsappLink("Hi! I'd like to know more about Avora × Crazy Hedz events.")}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

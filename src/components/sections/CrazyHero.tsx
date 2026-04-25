@@ -1,13 +1,14 @@
 import { Zap, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import crazyHero from "@/assets/crazy-hero.jpg";
+import crazyLogo from "@/assets/crazy-logo.png";
 
 export function CrazyHero({ onTickets, onAmbassador }: { onTickets: () => void; onAmbassador: () => void }) {
   return (
     <section id="home" className="relative w-full min-h-screen overflow-hidden theme-crazy bg-crazy-bg flex items-center">
       <img
         src={crazyHero}
-        alt="Crazy Heads neon concert crowd"
+        alt="Crazy Hedz neon concert crowd"
         className="absolute inset-0 w-full h-full object-cover scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-crazy-bg/40 via-crazy-bg/55 to-crazy-bg" />
@@ -17,17 +18,16 @@ export function CrazyHero({ onTickets, onAmbassador }: { onTickets: () => void; 
       <div className="container relative z-10 text-center px-6 py-24 md:py-32 animate-fade-in-slow">
         <p className="eyebrow text-crazy-purple mb-6 tracking-[0.5em]">
           <Zap className="inline size-3 mr-2" />
-          Youth Event Experiences
+          College Events
         </p>
-        <h1 className="font-display text-7xl sm:text-8xl md:text-9xl text-neon mb-4 leading-[0.95]">
-          CRAZY
-        </h1>
-        <p className="font-display tracking-[0.6em] text-crazy-text/85 text-2xl md:text-4xl mb-8">
-          H E A D S
-        </p>
+        <img
+          src={crazyLogo}
+          alt="Crazy Hedz"
+          className="mx-auto h-40 sm:h-56 md:h-72 lg:h-80 w-auto object-contain mb-6 drop-shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
+        />
         <div className="mx-auto h-px w-16 bg-gradient-to-r from-transparent via-crazy-purple to-transparent mb-8" />
         <p className="max-w-2xl mx-auto text-crazy-text/85 text-base md:text-lg leading-relaxed mb-10">
-          Electrifying events built for the bold — where energy meets artistry and every moment hits different.
+          Electrifying college events built for the bold — where energy meets artistry and every moment hits different.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button variant="neon" size="lg" className="px-10 py-7 text-sm" onClick={onTickets}>

@@ -41,9 +41,23 @@ export async function submitToSheets(
 export const WHATSAPP_NUMBER = "918419979918";
 export const CONTACT_EMAIL = "avoraexperiences@gmail.com";
 export const CONTACT_PHONE = "+91 84199 79918";
-export const INSTAGRAM_AVORA = "https://instagram.com/avora.experiences";
-export const INSTAGRAM_CRAZY = "https://instagram.com/crazyhedz";
+export const CONTACT_PHONE_ANSH = "+91 89991 94100";
+export const INSTAGRAM_AVORA = "https://instagram.com/avora_experiences";
+export const INSTAGRAM_CRAZY = "https://instagram.com/crazy_hedz";
+export const INSTAGRAM_AVORA_HANDLE = "@avora_experiences";
+export const INSTAGRAM_CRAZY_HANDLE = "@crazy_hedz";
 
 export function whatsappLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
+
+// Pre-wedding venues offered by Avora
+export const PRE_WEDDING_VENUES = [
+  "Goa",
+  "Rajasthan (Jaipur / Udaipur)",
+  "Uttarakhand",
+  "Hyderabad",
+  "Bangalore",
+  "Alibaug / Lonavla",
+  "All across Maharashtra",
+];

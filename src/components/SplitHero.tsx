@@ -89,7 +89,7 @@ export function SplitHero({
         >
           <img
             src={crazyHero}
-            alt="CrazyHedz neon concert crowd with hands raised"
+            alt="Crazy Hedz neon concert crowd with hands raised"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] scale-105 hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-crazy-bg/70 via-crazy-bg/20 to-crazy-bg/70" />
@@ -139,7 +139,7 @@ export function SplitHero({
           </div>
         </div>
         <div className="theme-crazy relative flex-1 overflow-hidden">
-          <img src={crazyHero} alt="CrazyHedz" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={crazyHero} alt="Crazy Hedz" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-crazy-bg/55" />
           <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
             <span className="eyebrow text-crazy-purple mb-3"><Zap className="inline size-3 mr-1" /> Youth</span>

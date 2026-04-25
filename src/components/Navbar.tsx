@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import avoraLogo from "@/assets/avora-logo.png";
+import crazyLogo from "@/assets/crazy-logo.png";
 
 type Brand = "avora" | "crazy";
 
@@ -63,9 +64,11 @@ export function Navbar({
               className="h-12 md:h-16 lg:h-20 w-auto object-contain transition-transform group-hover:scale-105"
             />
           ) : (
-            <span className="font-display text-2xl md:text-3xl lg:text-4xl text-neon tracking-wide">
-              CRAZY <span className="text-crazy-text/80 font-light text-xl md:text-2xl">HEADS</span>
-            </span>
+            <img
+              src={crazyLogo}
+              alt="Crazy Hedz"
+              className="h-12 md:h-16 lg:h-20 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           )}
         </Link>
 
@@ -86,7 +89,7 @@ export function Navbar({
               brand === "avora" ? "text-crazy-purple hover:opacity-80" : "text-primary hover:opacity-80"
             )}
           >
-            {brand === "avora" ? "Crazy Heads ↗" : "← Avora"}
+            {brand === "avora" ? "Crazy Hedz ↗" : "← Avora"}
           </Link>
         </nav>
 
@@ -128,7 +131,7 @@ export function Navbar({
                 brand === "avora" ? "text-crazy-purple" : "text-primary"
               )}
             >
-              {brand === "avora" ? "Crazy Heads ↗" : "← Avora"}
+              {brand === "avora" ? "Crazy Hedz ↗" : "← Avora"}
             </Link>
             {brand === "avora" ? (
               <Button variant="gold" size="lg" onClick={() => { onPrimaryCta(); setOpen(false); }}>{primaryLabel}</Button>

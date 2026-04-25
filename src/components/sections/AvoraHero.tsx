@@ -24,18 +24,15 @@ export function AvoraHero({ onPlanEvent, onExplore }: { onPlanEvent: () => void;
         <img
           src={avoraLogo}
           alt="Avora Experiences"
-          className="mx-auto h-20 md:h-28 lg:h-32 mb-8 opacity-95 drop-shadow-2xl"
+          className="mx-auto h-28 md:h-40 lg:h-48 w-auto object-contain mb-6 opacity-95 drop-shadow-2xl"
         />
         <p className="eyebrow text-primary mb-6 tracking-[0.5em]">
           <Sparkles className="inline size-3 mr-2" />
-          Luxury Event Experiences
+          Social Events
         </p>
         <h1 className="font-display italic text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-gold mb-4 leading-[0.95] drop-shadow-2xl">
           AVORA
         </h1>
-        <p className="font-display tracking-[0.6em] text-avora-cream/80 text-sm md:text-base mb-8">
-          E X P E R I E N C E S
-        </p>
         <div className="gold-divider mb-8" />
         <p className="max-w-2xl mx-auto text-foreground/85 text-base md:text-lg leading-relaxed mb-10 font-light">
           Crafting unforgettable moments with <em className="text-primary not-italic">elegance, precision, and artistry</em>.
