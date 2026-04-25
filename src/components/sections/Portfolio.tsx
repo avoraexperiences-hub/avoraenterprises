@@ -9,12 +9,12 @@ import p5 from "@/assets/portfolio-5.jpg";
 import p6 from "@/assets/portfolio-6.jpg";
 
 const items = [
-  { src: p1, cat: "Weddings", title: "Royal Mandap" },
-  { src: p2, cat: "Haldi", title: "Marigold Morning" },
-  { src: p3, cat: "Birthdays", title: "Gold Birthday" },
-  { src: p4, cat: "Corporate", title: "Gala Dinner" },
-  { src: p5, cat: "Parties", title: "Sunset Soirée" },
-  { src: p6, cat: "Parties", title: "Neon Nights" },
+  { src: p1, cat: "Weddings" },
+  { src: p2, cat: "Haldi" },
+  { src: p3, cat: "Birthdays" },
+  { src: p4, cat: "Corporate" },
+  { src: p5, cat: "Parties" },
+  { src: p6, cat: "Parties" },
 ];
 
 const filters = ["All", "Weddings", "Haldi", "Birthdays", "Parties", "Corporate"];
