@@ -48,20 +48,19 @@ export function Portfolio() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {visible.map((it, i) => (
             <div
-              key={it.title}
+              key={i}
               className="group relative aspect-[4/5] overflow-hidden rounded-xl border border-border/40"
               style={{ animationDelay: `${i * 80}ms` }}
             >
               <img
                 src={it.src}
-                alt={it.title}
+                alt={it.cat}
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-95 transition" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-70 group-hover:opacity-90 transition" />
               <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition">
-                <p className="eyebrow text-primary mb-1">{it.cat}</p>
-                <h3 className="font-display text-2xl">{it.title}</h3>
+                <p className="eyebrow text-primary">{it.cat}</p>
               </div>
             </div>
           ))}
