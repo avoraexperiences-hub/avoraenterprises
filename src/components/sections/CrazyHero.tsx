@@ -1,7 +1,6 @@
 import { Zap, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import crazyHero from "@/assets/crazy-hero.jpg";
-import crazyLogo from "@/assets/crazy-logo.png";
 
 export function CrazyHero({ onTickets, onAmbassador }: { onTickets: () => void; onAmbassador: () => void }) {
   return (
@@ -20,11 +19,12 @@ export function CrazyHero({ onTickets, onAmbassador }: { onTickets: () => void; 
           <Zap className="inline size-3 mr-2" />
           College Events
         </p>
-        <img
-          src={crazyLogo}
-          alt="Crazy Hedz"
-          className="mx-auto h-40 sm:h-56 md:h-72 lg:h-80 w-auto object-contain mb-6 logo-blend"
-        />
+        <h1 className="font-display italic text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-neon leading-[0.95] drop-shadow-2xl">
+          CRAZY
+        </h1>
+        <p className="font-display tracking-[0.5em] text-crazy-text/85 text-xs md:text-sm mt-4 mb-8">
+          H E D Z
+        </p>
         <div className="mx-auto h-px w-16 bg-gradient-to-r from-transparent via-crazy-purple to-transparent mb-8" />
         <p className="max-w-2xl mx-auto text-crazy-text/85 text-base md:text-lg leading-relaxed mb-10">
           Electrifying college events built for the bold — where energy meets artistry and every moment hits different.

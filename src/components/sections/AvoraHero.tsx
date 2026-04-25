@@ -1,7 +1,6 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import avoraHero from "@/assets/avora-hero.jpg";
-import avoraLogo from "@/assets/avora-logo.png";
 
 export function AvoraHero({ onPlanEvent, onExplore }: { onPlanEvent: () => void; onExplore: () => void }) {
   return (
@@ -17,22 +16,20 @@ export function AvoraHero({ onPlanEvent, onExplore }: { onPlanEvent: () => void;
       <div className="absolute inset-0 bg-gradient-avora-radial opacity-40" />
       <div className="absolute inset-0 film-grain" />
 
-      {/* Decorative top/bottom gold lines */}
+      {/* Decorative top gold line */}
       <div className="absolute top-32 left-1/2 -translate-x-1/2 h-px w-32 md:w-48 bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
       <div className="container relative z-10 text-center px-6 py-24 md:py-32 animate-fade-in-slow">
-        <img
-          src={avoraLogo}
-          alt="Avora Experiences"
-          className="mx-auto h-28 md:h-40 lg:h-48 w-auto object-contain mb-6 logo-blend"
-        />
         <p className="eyebrow text-primary mb-6 tracking-[0.5em]">
           <Sparkles className="inline size-3 mr-2" />
           Social Events
         </p>
-        <h1 className="font-display italic text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-gold mb-4 leading-[0.95] drop-shadow-2xl">
+        <h1 className="font-display italic text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-gold leading-[0.95] drop-shadow-2xl">
           AVORA
         </h1>
+        <p className="font-display tracking-[0.5em] text-avora-cream/85 text-xs md:text-sm mt-4 mb-8">
+          E X P E R I E N C E S
+        </p>
         <div className="gold-divider mb-8" />
         <p className="max-w-2xl mx-auto text-foreground/85 text-base md:text-lg leading-relaxed mb-10 font-light">
           Crafting unforgettable moments with <em className="text-primary not-italic">elegance, precision, and artistry</em>.
