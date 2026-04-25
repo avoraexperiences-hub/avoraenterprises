@@ -89,7 +89,7 @@ export function Navbar({
               brand === "avora" ? "text-crazy-purple hover:opacity-80" : "text-primary hover:opacity-80"
             )}
           >
-            {brand === "avora" ? "Crazy Heads ↗" : "← Avora"}
+            {brand === "avora" ? "Crazy Hedz ↗" : "← Avora"}
           </Link>
         </nav>
 
@@ -131,7 +131,7 @@ export function Navbar({
                 brand === "avora" ? "text-crazy-purple" : "text-primary"
               )}
             >
-              {brand === "avora" ? "Crazy Heads ↗" : "← Avora"}
+              {brand === "avora" ? "Crazy Hedz ↗" : "← Avora"}
             </Link>
             {brand === "avora" ? (
               <Button variant="gold" size="lg" onClick={() => { onPrimaryCta(); setOpen(false); }}>{primaryLabel}</Button>
